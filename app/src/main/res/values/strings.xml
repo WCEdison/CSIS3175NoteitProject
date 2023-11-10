@@ -7,3 +7,26 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
 </resources>
+
+<resources>
+<string name="app_name">Note-Taking</string>
+<string name="title">Title</string>
+<string name="description">Description</string>
+<string name="enter_note_title">Enter Note Title</string>
+<string name="enter_note">Enter Note</string>
+<string name="save">Save</string>
+<string name="cancel">Cancel</string>
+<string name="developer">Developer</string>
+<string name="list_developer">List of Developer</string>
+<string name="csc_3111_mobile_application_development">CSC 3111: Mobile Application Development</string>
+<string name="Note_taking_application">(Group 1) Note-It</string>
+<string-array name="developers">
+    <item>Example 1</item>
+    <item>Example 2</item>
+    <item>Example 3</item>
+    <item>Example 4</item>
+    <item>Example 5</item>
+    <item>Example 6</item>
+    <item>Example 7</item>
+</string-array>
+</resources>
