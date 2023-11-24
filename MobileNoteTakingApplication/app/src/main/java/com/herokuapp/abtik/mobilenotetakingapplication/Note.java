@@ -3,22 +3,23 @@ package com.herokuapp.abtik.mobilenotetakingapplication;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity(tableName = "note_table")
 public class Note {
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    public int id = 0;
 
-    public String title;
-    public String description;
+    public String title = "Default Title";
+    public String description = "Default Task Description";
 
-    public Date dueDate;
+    public Date dueDate = new Date();
 
-    public Date lastEdit;
+    public Date lastEdit = new Date();
 
-    public String tag;
+    public String tag = "Urgent";
 
     public void setTitle(String title) {
         this.title = title;
