@@ -15,9 +15,9 @@ public class Note {
     public String title = "Default Title";
     public String description = "Default Task Description";
 
-    public Date dueDate = new Date();
-
-    public Date lastEdit = new Date();
+//    public Date dueDate = new Date();
+//
+//    public Date lastEdit = new Date();
 
     public String tag = "Urgent";
 
@@ -41,8 +41,8 @@ public class Note {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.dueDate = dueDate;
-        this.lastEdit = lastEdit;
+//        this.dueDate = dueDate;
+//        this.lastEdit = lastEdit;
         this.tag = tag;
     }
 
@@ -50,21 +50,21 @@ public class Note {
         this.description = description;
     }
 
-    public Date getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public Date getLastEdit() {
-        return lastEdit;
-    }
-
-    public void setLastEdit(Date lastEdit) {
-        this.lastEdit = lastEdit;
-    }
+//    public Date getDueDate() {
+//        return dueDate;
+//    }
+//
+//    public void setDueDate(Date dueDate) {
+//        this.dueDate = dueDate;
+//    }
+//
+//    public Date getLastEdit() {
+//        return lastEdit;
+//    }
+//
+//    public void setLastEdit(Date lastEdit) {
+//        this.lastEdit = lastEdit;
+//    }
 
     public String getTag() {
         return tag;
