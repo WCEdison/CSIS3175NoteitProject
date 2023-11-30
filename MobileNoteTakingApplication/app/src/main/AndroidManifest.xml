@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MobileNoteTakingApplication"
         tools:targetApi="31">
         <activity
+            android:name=".CalendarView"
+            android:exported="false" />
+        <activity
             android:name=".DevelopersActivity"
             android:exported="false">
             <meta-data
