@@ -10,6 +10,25 @@ public class Note {
     public int id;
 
     public String title;
+
+    public String getDueDateString() {
+        return dueDateString;
+    }
+
+    public String getLastEditString() {
+        return lastEditString;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public String dueDateString;
+
+    public String lastEditString;
+
+    public String tag;
+
     public String description;
 
     public Note(String title, String description) {
