@@ -67,10 +67,10 @@ public class CalendarActivity extends AppCompatActivity {
 
         if (noteAdapter == null) {
             noteAdapter = new NoteAdapter(this, notes);
-            Toast.makeText(CalendarActivity.this, "No notes found on " + makeDateString(d.getDay(),d.getMonth(),d.getYear()) , Toast.LENGTH_SHORT).show();
+            //Toast.makeText(CalendarActivity.this, "No notes found on " + makeDateString(d.getDay(),d.getMonth(),d.getYear()) , Toast.LENGTH_SHORT).show();
             notesListView.setAdapter(noteAdapter);
         } else {
-            Toast.makeText(CalendarActivity.this, "You have: " + notes.size() + " events." , Toast.LENGTH_SHORT).show();
+            //Toast.makeText(CalendarActivity.this, "You have: " + notes.size() + " events." , Toast.LENGTH_SHORT).show();
             noteAdapter.clear();
             noteAdapter.addAll(notes);
             noteAdapter.notifyDataSetChanged();
