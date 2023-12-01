@@ -20,7 +20,6 @@ public class AddNoteActivity extends AppCompatActivity {
     private Button dateButton;
     EditText title, description;
 
-    TextView DatePicked;
     Button cancel, save;
 
     @Override

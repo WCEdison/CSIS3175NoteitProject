@@ -35,7 +35,7 @@ public class UpdateActivity extends AppCompatActivity {
         getData();
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
-        dateButton.setText(getTodaysDate());
+        //dateButton.setText(getTodaysDate());
 
         cancel.setOnClickListener((View v) -> {
             Toast.makeText(getApplicationContext(), "Nothing updated", Toast.LENGTH_LONG).show();
@@ -46,8 +46,8 @@ public class UpdateActivity extends AppCompatActivity {
             updateNote();
         });
     }
-    private String getTodaysDate()
-    {
+
+    private String getTodaysDate() {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
@@ -56,13 +56,10 @@ public class UpdateActivity extends AppCompatActivity {
         return makeDateString(day, month, year);
     }
 
-    private void initDatePicker()
-    {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
-        {
+    private void initDatePicker() {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day)
-            {
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
                 String date = makeDateString(day, month, year);
                 dateButton.setText(date);
@@ -81,69 +78,73 @@ public class UpdateActivity extends AppCompatActivity {
 
     }
 
-    private String makeDateString(int day, int month, int year)
-    {
+    private String makeDateString(int day, int month, int year) {
         return getMonthFormat(month) + " " + day + " " + year;
     }
 
-    private String getMonthFormat(int month)
-    {
-        if(month == 1)
+    private String getMonthFormat(int month) {
+        if (month == 1)
             return "JAN";
-        if(month == 2)
+        if (month == 2)
             return "FEB";
-        if(month == 3)
+        if (month == 3)
             return "MAR";
-        if(month == 4)
+        if (month == 4)
             return "APR";
-        if(month == 5)
+        if (month == 5)
             return "MAY";
-        if(month == 6)
+        if (month == 6)
             return "JUN";
-        if(month == 7)
+        if (month == 7)
             return "JUL";
-        if(month == 8)
+        if (month == 8)
             return "AUG";
-        if(month == 9)
+        if (month == 9)
             return "SEP";
-        if(month == 10)
+        if (month == 10)
             return "OCT";
-        if(month == 11)
+        if (month == 11)
             return "NOV";
-        if(month == 12)
+        if (month == 12)
             return "DEC";
 
         //default should never happen
         return "JAN";
     }
 
-    public void openDatePicker(View view)
-    {
+    public void openDatePicker(View view) {
         datePickerDialog.show();
     }
-    private void updateNote()
-    {
+
+    private void updateNote() {
         String titleLast = title.getText().toString();
         String descriptionLast = description.getText().toString();
+        String noteDueDateLast = (String) dateButton.getText();
         Intent intent = new Intent();
         intent.putExtra("titleLast", titleLast);
         intent.putExtra("descriptionLast", descriptionLast);
-        if (noteId != -1)
-        {
+        intent.putExtra("noteDueDateLast", noteDueDateLast);
+        if (noteId != -1) {
             intent.putExtra("noteId", noteId);
             setResult(RESULT_OK, intent);
             finish();
         }
     }
 
-    public void getData()
-    {
+    public void getData() {
         Intent i = getIntent();
         noteId = i.getIntExtra("id", -1);
         String noteTitle = i.getStringExtra("title");
         String noteDescription = i.getStringExtra("description");
         String noteDate = i.getStringExtra("dueDateString");
+
         title.setText(noteTitle);
         description.setText(noteDescription);
+        if (noteDate != "") {
+            dateButton.setText(noteDate);
+        } else {
+            dateButton.setText(getTodaysDate()); //Fall back to reset date
+        }
+
     }
 }
