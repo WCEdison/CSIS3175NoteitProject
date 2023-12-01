@@ -22,7 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private NoteViewModel noteViewModel;
-    FloatingActionButton developer;
+    FloatingActionButton calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_main);
 
-        developer = findViewById(R.id.floatingActionButtonDeveloper);
+        calendar = findViewById(R.id.calendar);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         NoteAdapter adapter = new NoteAdapter();
         recyclerView.setAdapter(adapter);
 
-        developer.setOnClickListener((View v) -> {
-            Intent intent = new Intent(MainActivity.this, DevelopersActivity.class);
+        calendar.setOnClickListener((View v) -> {
+            Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
             startActivity(intent);
         });
 

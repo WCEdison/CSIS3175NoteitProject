@@ -2,7 +2,9 @@ package com.herokuapp.abtik.mobilenotetakingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
@@ -24,7 +26,10 @@ public class CalendarActivity extends AppCompatActivity {
         // CalendarView and TextView
         calendar = (CalendarView) findViewById(R.id.calendar);
         date_view = (TextView) findViewById(R.id.date_view);
-
+        calendar.setOnClickListener((View v) -> {
+            Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
         // Add Listener in calendar
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
