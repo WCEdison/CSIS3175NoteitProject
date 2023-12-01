@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, CalendarActivity.class));
                 }
 
-                if (id == R.id.nav_search) {
-                    startActivity(new Intent(MainActivity.this, SearchActivity.class));
-                }
+//                if (id == R.id.nav_search) {
+//                    startActivity(new Intent(MainActivity.this, SearchActivity.class));
+//                }
 
                 return true;
             }

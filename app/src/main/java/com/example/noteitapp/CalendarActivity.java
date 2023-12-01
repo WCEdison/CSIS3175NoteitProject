@@ -91,9 +91,9 @@ public class CalendarActivity extends AppCompatActivity {
                     startActivity(new Intent(CalendarActivity.this, CalendarActivity.class));
                 }
 
-                if (id == R.id.nav_search) {
-                    startActivity(new Intent(CalendarActivity.this, SearchActivity.class));
-                }
+//                if (id == R.id.nav_search) {
+//                    startActivity(new Intent(CalendarActivity.this, SearchActivity.class));
+//                }
 
                 return true;
             }
