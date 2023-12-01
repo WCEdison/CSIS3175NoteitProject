@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/drawable_calendar.xml.flat",
+        "source": "com.example.noteitapp-main-6:/drawable/calendar.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.noteitapp-main-6:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/xml_backup_rules.xml.flat",
+        "source": "com.example.noteitapp-main-6:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/layout_activity_add_note.xml.flat",
+        "source": "com.example.noteitapp-main-6:/layout/activity_add_note.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/menu_bottom.xml.flat",
+        "source": "com.example.noteitapp-main-6:/menu/bottom.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/drawable_colors.xml.flat",
+        "source": "com.example.noteitapp-main-6:/drawable/colors.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/layout_note_item.xml.flat",
+        "source": "com.example.noteitapp-main-6:/layout/note_item.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/layout_activity_calendar.xml.flat",
+        "source": "com.example.noteitapp-main-6:/layout/activity_calendar.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/layout_activity_main.xml.flat",
+        "source": "com.example.noteitapp-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/layout_activity_search.xml.flat",
+        "source": "com.example.noteitapp-main-6:/layout/activity_search.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.noteitapp-pngs-0:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.noteitapp-main-6:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/layout_activity_note.xml.flat",
+        "source": "com.example.noteitapp-main-6:/layout/activity_note.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/drawable_back.xml.flat",
+        "source": "com.example.noteitapp-main-6:/drawable/back.xml"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.noteitapp-merged_res-4:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.noteitapp-main-6:/mipmap-xhdpi/ic_launcher.webp"
+    }
+]

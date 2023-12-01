@@ -1,0 +1,10 @@
+#Thu Nov 30 22:25:14 PST 2023
+base.0=C\:\\Github\\CSIS3175NoteitProject_Nidhi_New\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Github\\CSIS3175NoteitProject_Nidhi_New\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Github\\CSIS3175NoteitProject_Nidhi_New\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=1/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
