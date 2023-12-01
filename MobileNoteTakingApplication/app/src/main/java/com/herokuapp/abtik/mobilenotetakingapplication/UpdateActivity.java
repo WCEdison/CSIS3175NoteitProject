@@ -140,11 +140,12 @@ public class UpdateActivity extends AppCompatActivity {
 
         title.setText(noteTitle);
         description.setText(noteDescription);
-        if (noteDate != "") {
-            dateButton.setText(noteDate);
-        } else {
-            dateButton.setText(getTodaysDate()); //Fall back to reset date
-        }
+//        dateButton.setText(noteDate);
+//        if (noteDate != "") {
+//            dateButton.setText(noteDate);
+//        } else {
+//            dateButton.setText(getTodaysDate()); //Fall back to reset date
+//        }
 
     }
 }
