@@ -3,13 +3,10 @@ package com.herokuapp.abtik.mobilenotetakingapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
-import android.os.Bundle;
-
-public class Calendar extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
 
     // Define the variable of CalendarView type
     // and TextView type;

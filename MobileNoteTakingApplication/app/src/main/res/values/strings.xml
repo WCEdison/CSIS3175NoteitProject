@@ -5,6 +5,7 @@
     <string name="enter_note_title">Enter Note Title</string>
     <string name="enter_note">Enter Note</string>
     <string name="save">Save</string>
+    <string name="date">Date</string>
     <string name="cancel">Cancel</string>
     <string name="developer">Developer</string>
     <string name="list_developer">List of Developer</string>
@@ -19,4 +20,6 @@
         <item>Sochong, Jasper Kent: Developer/Documentation</item>
         <item>Galindo, Fhel Niño: Developer/Documentation</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
