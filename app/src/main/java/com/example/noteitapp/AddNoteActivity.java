@@ -12,10 +12,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class AddNoteActivity extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
+    private Date dueDate;
     private Button dateButton;
     private EditText titleEditText;
     private EditText descriptionEditText;
@@ -35,12 +37,15 @@ public class AddNoteActivity extends AppCompatActivity {
         findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String title = titleEditText.getText().toString();
                 String description = descriptionEditText.getText().toString();
-                String duedate = dateButton.getText().toString();
                 Random random = new Random();
                 int id = random.nextInt(9000) + 1000;
-                db.addNote(new Note(id, title, description));
+                Note targetnote = new Note(id, title, description);
+                targetnote.setDateCreated(dueDate);
+                //String duedate = dateButton.getText().toString();
+                db.addNote(targetnote);
                 Toast.makeText(AddNoteActivity.this, "Note created", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -56,6 +61,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
     private String getTodaysDate() {
         Calendar cal = Calendar.getInstance();
+
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         month = month + 1;
@@ -67,8 +73,10 @@ public class AddNoteActivity extends AppCompatActivity {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                dueDate = new Date(year, month, day );
                 month = month + 1;
                 String date = makeDateString(day, month, year);
+                Toast.makeText(AddNoteActivity.this, "Date Selected:" + date, Toast.LENGTH_SHORT).show();
                 dateButton.setText(date);
             }
         };
@@ -77,6 +85,7 @@ public class AddNoteActivity extends AppCompatActivity {
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
+
 
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
