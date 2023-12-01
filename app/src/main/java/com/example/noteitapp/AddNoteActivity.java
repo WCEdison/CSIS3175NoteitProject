@@ -43,7 +43,11 @@ public class AddNoteActivity extends AppCompatActivity {
                 Random random = new Random();
                 int id = random.nextInt(9000) + 1000;
                 Note targetnote = new Note(id, title, description);
-                targetnote.setDateCreated(dueDate);
+                try {
+                    targetnote.setDateCreated(dueDate);
+                } catch (Exception error1) {
+
+                }
                 //String duedate = dateButton.getText().toString();
                 db.addNote(targetnote);
                 Toast.makeText(AddNoteActivity.this, "Note created", Toast.LENGTH_SHORT).show();
@@ -73,7 +77,7 @@ public class AddNoteActivity extends AppCompatActivity {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                dueDate = new Date(year, month, day );
+                dueDate = new Date(year, month, day);
                 month = month + 1;
                 String date = makeDateString(day, month, year);
                 Toast.makeText(AddNoteActivity.this, "Date Selected:" + date, Toast.LENGTH_SHORT).show();

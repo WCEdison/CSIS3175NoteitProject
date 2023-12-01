@@ -63,7 +63,11 @@ public class NoteActivity extends AppCompatActivity {
                 String title = titleEditText.getText().toString();
                 String description = descriptionEditText.getText().toString();
                 Note newNote = new Note(note.getId(), title, description);
-                newNote.setDateCreated(dueDate);
+                try {
+                    newNote.setDateCreated(dueDate);
+                } catch (Exception error1) {
+
+                }
                 db.updateNote(newNote);
                 Toast.makeText(NoteActivity.this, "Note updated", Toast.LENGTH_SHORT).show();
                 finish();
