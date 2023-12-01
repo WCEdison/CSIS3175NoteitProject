@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         db = new NoteDatabaseHelper(this);
         notesListView = findViewById(R.id.notes_list_view);
         ArrayList<Note> notes = db.getAllNotes();
+        if (notes.size()==0){
+            Random random = new Random();
+            int id = random.nextInt(9000) + 1000;
+            db.addNote(new Note(id, "title", "description"));
+            //finish();
+        }
         Toast.makeText(MainActivity.this, "Welcome, you have: " + notes.size() + " events.", Toast.LENGTH_SHORT).show();
         TriggerNotification("Note it update!", notes.size() + " events.");
 
