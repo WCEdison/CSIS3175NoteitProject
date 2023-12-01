@@ -1,52 +1,50 @@
 package com.example.noteitapp;
 
 //package com.herokuapp.abtik.mobilenotetakingapplication;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddNoteActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
-    EditText title, description;
-    Button cancel, save;
+import java.util.Random;
+
+public class AddNoteActivity extends AppCompatActivity {
+    private EditText titleEditText;
+    private EditText descriptionEditText;
+    private NoteDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setTitle("Add Note");
         setContentView(R.layout.activity_add_note);
 
-        title = findViewById(R.id.editTextTitle);
-        description = findViewById(R.id.editTextDescription);
-        cancel = findViewById(R.id.buttonCancel);
-        save = findViewById(R.id.buttonSave);
+        db = new NoteDatabaseHelper(this);
+        titleEditText = findViewById(R.id.title_edit_text);
+        descriptionEditText = findViewById(R.id.description_edit_text);
 
-        cancel.setOnClickListener((View v) -> {
-            Toast.makeText(getApplicationContext(), "Nothing saved", Toast.LENGTH_LONG).show();
-            finish();
+        findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String title = titleEditText.getText().toString();
+                String description = descriptionEditText.getText().toString();
+
+                Random random = new Random();
+                int id = random.nextInt(9000) + 1000;
+                db.addNote(new Note(id, title, description));
+                Toast.makeText(AddNoteActivity.this, "Note created", Toast.LENGTH_SHORT).show();
+                finish();
+            }
         });
 
-        save.setOnClickListener((View v) -> {
-            saveNote();
+        findViewById(R.id.buttonCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
         });
     }
 
-    public void saveNote()
-    {
-        String noteTitle = title.getText().toString();
-        String noteDescription = description.getText().toString();
 
-        Intent i = new Intent();
-        i.putExtra("noteTitle", noteTitle);
-        i.putExtra("noteDescription", noteDescription);
-        setResult(RESULT_OK, i);
-        finish();
-        Toast.makeText(getApplicationContext(), "Added new note", Toast.LENGTH_LONG).show();
-    }
 }
-

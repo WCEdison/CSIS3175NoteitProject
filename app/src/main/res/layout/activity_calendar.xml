@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3D3D3"
-    tools:context=".MainActivity">
+    tools:context=".CalendarActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,23 +23,36 @@
             android:textSize="25dp"/>
     </androidx.appcompat.widget.Toolbar>
 
+    <TextView
+        android:id="@+id/txt_noitems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar2"
+        android:text="No items found for selected date."/>
+
+    <CalendarView
+        android:layout_below="@+id/toolbar2"
+        android:id="@+id/id_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></CalendarView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
-    <ListView
-        android:background="#D3D3D3"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:id="@+id/notes_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_below="@+id/toolbar2">
+        <ListView
+            android:background="#D3D3D3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:id="@+id/cal_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
 
-        />
+            />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
