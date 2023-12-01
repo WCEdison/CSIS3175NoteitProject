@@ -103,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
         {
             String title = data.getStringExtra("noteTitle");
             String description = data.getStringExtra("noteDescription");
-
-            Note note = new Note(title, description);
+            String noteDueDate = data.getStringExtra("noteDueDate");
+            Note note = new Note(title, description,noteDueDate);
             noteViewModel.insert(note);
         }
         else if (requestCode == 2 && resultCode == RESULT_OK)
@@ -112,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
             int id = data.getIntExtra("noteId", -1);
             String title = data.getStringExtra("titleLast");
             String description = data.getStringExtra("descriptionLast");
-
-            Note note = new Note(title, description);
+            String noteDueDate = data.getStringExtra("noteDueDateLast");
+            Note note = new Note(title, description,noteDueDate);
             note.setId(id);
             noteViewModel.update(note);
         }
