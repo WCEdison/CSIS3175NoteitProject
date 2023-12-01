@@ -73,6 +73,12 @@ public class NoteActivity extends AppCompatActivity {
                 finish();
             }
         });
+        findViewById(R.id.buttonCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private String getTodaysDate() {
