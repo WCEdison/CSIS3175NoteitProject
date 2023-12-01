@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         db = new NoteDatabaseHelper(this);
         notesListView = findViewById(R.id.notes_list_view);
+        ArrayList<Note> notes = db.getAllNotes();
+        Toast.makeText(MainActivity.this, "Welcome, you have: " + notes.size() + " events." , Toast.LENGTH_SHORT).show();
+
         updateUI();
 
         notesListView.setOnItemClickListener((parent, view, position, id) -> {
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI() {
         ArrayList<Note> notes = db.getAllNotes();
+       // Toast.makeText(MainActivity.this, "Welcome, you have: " + notes.size() + " events." , Toast.LENGTH_SHORT).show();
         if (noteAdapter == null) {
             noteAdapter = new NoteAdapter(this, notes);
             notesListView.setAdapter(noteAdapter);

@@ -10,9 +10,12 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,7 +31,8 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
         notesListView = findViewById(R.id.cal_list_view);
         db = new NoteDatabaseHelper(this);
-
+        //ArrayList<Note> notes = db.getAllNotes();
+        //Toast.makeText(CalendarActivity.this, "Welcome, you have: " + notes.size() + " events in calendar." , Toast.LENGTH_SHORT).show();
         CalendarView calendarView = findViewById(R.id.id_cal);
         TextView txt = findViewById(R.id.txt_noitems);
         txt.setVisibility(View.INVISIBLE);
@@ -55,10 +59,18 @@ public class CalendarActivity extends AppCompatActivity {
 
     private void updateUIWithDate(Date d) {
         ArrayList<Note> notes = db.getAllNotesByDate(d);
+        DateFormat dateFormat = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            dateFormat = new SimpleDateFormat("MM DD YYYY");
+        }
+        String strDate = dateFormat.format(d);
+
         if (noteAdapter == null) {
             noteAdapter = new NoteAdapter(this, notes);
+            Toast.makeText(CalendarActivity.this, "No notes found on " + makeDateString(d.getDay(),d.getMonth(),d.getYear()) , Toast.LENGTH_SHORT).show();
             notesListView.setAdapter(noteAdapter);
         } else {
+            Toast.makeText(CalendarActivity.this, "You have: " + notes.size() + " events." , Toast.LENGTH_SHORT).show();
             noteAdapter.clear();
             noteAdapter.addAll(notes);
             noteAdapter.notifyDataSetChanged();
@@ -99,4 +111,40 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    private String makeDateString(int day, int month, int year) {
+        return getMonthFormat(month) + " " + day + " " + year;
+    }
+
+    private String getMonthFormat(int month) {
+        if (month == 1)
+            return "JAN";
+        if (month == 2)
+            return "FEB";
+        if (month == 3)
+            return "MAR";
+        if (month == 4)
+            return "APR";
+        if (month == 5)
+            return "MAY";
+        if (month == 6)
+            return "JUN";
+        if (month == 7)
+            return "JUL";
+        if (month == 8)
+            return "AUG";
+        if (month == 9)
+            return "SEP";
+        if (month == 10)
+            return "OCT";
+        if (month == 11)
+            return "NOV";
+        if (month == 12)
+            return "DEC";
+
+        //default should never happen
+        return "JAN";
+    }
+
 }
